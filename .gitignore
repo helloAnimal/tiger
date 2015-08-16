@@ -1,4 +1,4 @@
-*.class
+﻿*.class
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -10,3 +10,24 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/target
+
+/bin
+/bin-debug
+/bin-release
+/.settings
+/build
+.*
+/WebRoot/WEB-INF/classes
+/WebRoot/logs
+/WebRoot/META-INF
+/target
+/zygl.iml
+
+
+# IntelliJ IDEA Files #
+
+*.iml
+*.ipr
+*.iws
+*.idea

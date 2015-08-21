@@ -100,6 +100,14 @@
             <version>${mysql.version}</version>
         </dependency>
         <!--[END] mysql 驱动配置-->
+        <!--[START] 连接池配置-->
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.5-pre3</version>
+        </dependency>
+        <!--[END] 连接池配置-->
+
     </dependencies>
 
 </project>

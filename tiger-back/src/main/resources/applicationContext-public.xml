@@ -2,11 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!--
-        1.搭建spring配置文件
-            1.1 建立date bean
-            1.2 junit测试spring
-        2.搭建hibernate配置文件
-    -->
-    <bean id="date" class="java.util.Date"/>
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/tiger"/>
+        <property name="user" value="root"/>
+        <property name="password" value="123456"/>
+    </bean>
 </beans>

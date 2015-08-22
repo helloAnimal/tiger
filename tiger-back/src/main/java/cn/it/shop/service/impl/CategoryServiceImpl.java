@@ -5,6 +5,9 @@ import cn.it.shop.service.CategoryService;
 import cn.it.shop.util.HibernateSessionFactory;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import javax.annotation.Resource;
 
 /**
  * 描述：
@@ -13,7 +16,16 @@ import org.hibernate.Session;
  * Time: 20:00
  */
 public class CategoryServiceImpl implements CategoryService{
+    private SessionFactory sessionFactory;
+
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
     @Override
+    /**
+     * 没有整合时的情况
+     */
     public void save(Category category) {
         //通过工具类获取session
         Session session=HibernateSessionFactory.getSession();
@@ -27,6 +39,8 @@ public class CategoryServiceImpl implements CategoryService{
         } finally {
             HibernateSessionFactory.closeSession();
         }
-
+    }
+    public void update(Category category){
+        sessionFactory.getCurrentSession().update(category);
     }
 }

@@ -18,20 +18,31 @@ import java.util.Date;
  * Time: 17:16
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:applicationContext-*.xml")
+@ContextConfiguration(locations = "classpath:applicationContext-public.xml")
 public class SSHTest {
     @Resource
     private Date date;
+    @Resource
+    private CategoryService categoryService;
     @Test
     public void springIoc(){
         System.out.println(date);
     }
+//    @Test
+//    public void hibernate(){
+//        CategoryService categoryService=new CategoryServiceImpl();
+//        Category category=new Category();
+//        category.setType("男士休闲");
+//        category.setHot((byte) 1);
+//        categoryService.save(category);
+//    }
+//
     @Test
-    public void hibernate(){
-        CategoryService categoryService=new CategoryServiceImpl();
+    public void hibernateAndSpring(){
         Category category=new Category();
-        category.setType("男士休闲");
-        category.setHot((byte) 1);
-        categoryService.save(category);
+        category.setId(1);
+        category.setType("女士休闲");
+        category.setHot((byte) 2);
+        categoryService.update(category);
     }
 }

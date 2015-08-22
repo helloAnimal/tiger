@@ -1,0 +1,9 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set value="${pageContext.request.contextPath}" var="shop"></c:set>
+<title>易购商城</title>
+<link rel="stylesheet" type="text/css" href="${shop}/jquery-easyui-1.4.2/themes/icon.css"/>
+<link rel="stylesheet" type="text/css" href="${shop}/jquery-easyui-1.4.2/themes/bootstrap/easyui.css"/>
+<script type="text/javascript" src="${shop}/jquery-easyui-1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="${shop}/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="${shop}/jquery-easyui-1.4.2/locale/easyui-lang-zh_CN.js"></script>

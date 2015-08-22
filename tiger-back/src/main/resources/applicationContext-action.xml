@@ -12,5 +12,6 @@
     <bean id="accountAction" class="cn.it.shop.action.AccountAction">
         <property name="accountService" ref="accountService"/>
     </bean>
+    <bean id="sendAction" class="cn.it.shop.action.SendAction"/>
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 </beans>

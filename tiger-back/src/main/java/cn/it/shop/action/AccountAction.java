@@ -28,7 +28,9 @@ public class AccountAction extends BaseAction{
         application.put("accountList",accountService.query());
         return SUCCESS;
     }
-
+    public String mainIndex(){
+        return "mainIndex";
+    }
     public void setAccountService(AccountServiceImpl accountService) {
         this.accountService = accountService;
     }

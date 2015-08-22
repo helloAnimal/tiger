@@ -4,6 +4,8 @@ import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.ApplicationAware;
 import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.SessionAware;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 
 import java.util.Map;
 
@@ -13,6 +15,8 @@ import java.util.Map;
  * Date: 2015/8/22
  * Time: 14:51
  */
+@Controller
+@Scope("prototype")
 public class BaseAction extends ActionSupport implements RequestAware,SessionAware,ApplicationAware{
     protected Map<String,Object> request;
     protected Map<String,Object> session;

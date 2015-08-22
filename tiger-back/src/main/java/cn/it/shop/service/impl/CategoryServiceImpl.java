@@ -2,6 +2,7 @@ package cn.it.shop.service.impl;
 
 import cn.it.shop.model.Category;
 import cn.it.shop.service.CategoryService;
+import org.springframework.stereotype.Service;
 
 /**
  * 描述：
@@ -9,6 +10,7 @@ import cn.it.shop.service.CategoryService;
  * Date: 2015/8/21
  * Time: 20:00
  */
+@Service
 public class CategoryServiceImpl extends BaseServiceImpl<Category> implements CategoryService{
 
 }

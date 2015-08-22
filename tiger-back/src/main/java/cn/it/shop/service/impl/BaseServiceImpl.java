@@ -4,7 +4,10 @@ import cn.it.shop.service.BaseService;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
@@ -15,8 +18,11 @@ import java.util.List;
  * Date: 2015/8/22
  * Time: 11:04
  */
+@Service
+@Lazy(true)
 public class BaseServiceImpl<T> implements BaseService<T> {
     private Class clazz;
+    @Resource
     private SessionFactory sessionFactory;
 
     private Session getSession() {
@@ -62,7 +68,4 @@ public class BaseServiceImpl<T> implements BaseService<T> {
         return getSession().createQuery(hql).list();
     }
 
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
 }

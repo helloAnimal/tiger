@@ -3,6 +3,10 @@ package cn.it.shop.action;
 import cn.it.shop.model.Category;
 import cn.it.shop.service.impl.CategoryServiceImpl;
 import com.opensymphony.xwork2.ActionSupport;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+
+import javax.annotation.Resource;
 
 /**
  * 描述：
@@ -10,7 +14,10 @@ import com.opensymphony.xwork2.ActionSupport;
  * Date: 2015/8/22
  * Time: 9:29
  */
+@Controller
+@Scope("prototype")
 public class CategoryAction extends ActionSupport{
+    @Resource
     private CategoryServiceImpl categoryService;
     private Category category;
 
@@ -24,10 +31,6 @@ public class CategoryAction extends ActionSupport{
         System.out.println("------delete-------");
         categoryService.delete(category.getId());
         return SUCCESS;
-    }
-
-    public void setCategoryService(CategoryServiceImpl categoryService) {
-        this.categoryService = categoryService;
     }
 
     public void setCategory(Category category) {

@@ -2,6 +2,10 @@ package cn.it.shop.action;
 
 import cn.it.shop.model.Account;
 import cn.it.shop.service.impl.AccountServiceImpl;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+
+import javax.annotation.Resource;
 
 /**
  * 描述：
@@ -9,7 +13,10 @@ import cn.it.shop.service.impl.AccountServiceImpl;
  * Date: 2015/8/22
  * Time: 14:18
  */
+@Controller
+@Scope("prototype")
 public class AccountAction extends BaseAction{
+    @Resource
     private AccountServiceImpl accountService;
 
     public String save(){
@@ -30,8 +37,5 @@ public class AccountAction extends BaseAction{
     }
     public String mainIndex(){
         return "mainIndex";
-    }
-    public void setAccountService(AccountServiceImpl accountService) {
-        this.accountService = accountService;
     }
 }

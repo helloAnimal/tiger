@@ -16,5 +16,8 @@
         <action name="save" class="accountAction" method="save">
             <result name="success">/index.jsp</result>
         </action>
+        <action name="query" class="accountAction" method="query">
+            <result name="success">/index.jsp</result>
+        </action>
     </package>
 </struts>

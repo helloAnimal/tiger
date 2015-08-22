@@ -2,7 +2,6 @@ package cn.it.shop.action;
 
 import cn.it.shop.model.Account;
 import cn.it.shop.service.impl.AccountServiceImpl;
-import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * 描述：
@@ -10,7 +9,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * Date: 2015/8/22
  * Time: 14:18
  */
-public class AccountAction extends ActionSupport{
+public class AccountAction extends BaseAction{
     private AccountServiceImpl accountService;
 
     public String save(){
@@ -19,6 +18,14 @@ public class AccountAction extends ActionSupport{
         account.setName("管理员");
         account.setPass("123");
         accountService.save(account);
+        System.out.println();
+        return SUCCESS;
+    }
+
+    public String query(){
+        request.put("accountList",accountService.query());
+        session.put("accountList",accountService.query());
+        application.put("accountList",accountService.query());
         return SUCCESS;
     }
 

@@ -130,6 +130,19 @@
             <version>0.9.5-pre3</version>
         </dependency>
         <!--[END] 连接池配置-->
+        <!--[START] c标签配置-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+        <!--[END] c标签配置-->
+
 
     </dependencies>
 

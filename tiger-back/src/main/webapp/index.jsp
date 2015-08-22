@@ -11,6 +11,7 @@
     <title></title>
 </head>
 <body>
-This is my first page;
+<a href="update.action?category.type=4567&category.id=1&category.hot=2">更新</a>
+<a href="delete.action?category.id=1">删除</a>
 </body>
 </html>

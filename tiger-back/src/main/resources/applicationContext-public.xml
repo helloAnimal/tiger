@@ -32,8 +32,5 @@
         <aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut"/>
     </aop:config>
 
-    <bean id="date" class="java.util.Date"/>
-    <bean id="categoryService" class="cn.it.shop.service.impl.CategoryServiceImpl" >
-        <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
+
 </beans>

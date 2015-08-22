@@ -8,7 +8,5 @@ import cn.it.shop.model.Category;
  * Date: 2015/8/21
  * Time: 19:59
  */
-public interface CategoryService {
-    public void save(Category category);
-    public void update(Category category);
+public interface CategoryService extends BaseService<Category>{
 }

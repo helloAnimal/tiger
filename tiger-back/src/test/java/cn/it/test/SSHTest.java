@@ -18,7 +18,7 @@ import java.util.Date;
  * Time: 17:16
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:applicationContext-public.xml")
+@ContextConfiguration(locations = "classpath*:applicationContext-*.xml")
 public class SSHTest {
     @Resource
     private Date date;
@@ -26,7 +26,7 @@ public class SSHTest {
     private CategoryService categoryService;
     @Test
     public void springIoc(){
-        System.out.println(date);
+//        System.out.println(date);
     }
 //    @Test
 //    public void hibernate(){

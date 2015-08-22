@@ -1,9 +1,6 @@
 package cn.it.shop.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * 描述：
@@ -17,9 +14,10 @@ public class Category {
     private String type;
     private Byte hot;
     private Integer aid;
+    private Account account;
 
     @Id
-    @Column(name = "id", nullable = false, insertable = true, updatable = true)
+    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -29,7 +27,7 @@ public class Category {
     }
 
     @Basic
-    @Column(name = "type", nullable = true, insertable = true, updatable = true, length = 20)
+    @Column(name = "type")
     public String getType() {
         return type;
     }
@@ -39,7 +37,7 @@ public class Category {
     }
 
     @Basic
-    @Column(name = "hot", nullable = true, insertable = true, updatable = true)
+    @Column(name = "hot")
     public Byte getHot() {
         return hot;
     }
@@ -49,7 +47,7 @@ public class Category {
     }
 
     @Basic
-    @Column(name = "aid", nullable = true, insertable = true, updatable = true)
+    @Column(name = "aid",insertable = false,updatable = false)
     public Integer getAid() {
         return aid;
     }
@@ -57,6 +55,17 @@ public class Category {
     public void setAid(Integer aid) {
         this.aid = aid;
     }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "aid",referencedColumnName = "id")
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
 
     @Override
     public boolean equals(Object o) {

@@ -19,7 +19,7 @@ public class Account {
     private String pass;
 
     @Id
-    @Column(name = "id", nullable = false, insertable = true, updatable = true)
+    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -29,7 +29,7 @@ public class Account {
     }
 
     @Basic
-    @Column(name = "login", nullable = true, insertable = true, updatable = true, length = 20)
+    @Column(name = "login")
     public String getLogin() {
         return login;
     }
@@ -39,7 +39,7 @@ public class Account {
     }
 
     @Basic
-    @Column(name = "name", nullable = true, insertable = true, updatable = true, length = 20)
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -49,7 +49,7 @@ public class Account {
     }
 
     @Basic
-    @Column(name = "pass", nullable = true, insertable = true, updatable = true, length = 20)
+    @Column(name = "pass")
     public String getPass() {
         return pass;
     }

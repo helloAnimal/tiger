@@ -13,6 +13,8 @@
         <action name="delete" class="categoryAction" method="delete">
             <result name="success">/index.jsp</result>
         </action>
-
+        <action name="save" class="accountAction" method="save">
+            <result name="success">/index.jsp</result>
+        </action>
     </package>
 </struts>

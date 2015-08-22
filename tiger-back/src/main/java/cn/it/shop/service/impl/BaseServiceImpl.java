@@ -1,6 +1,5 @@
 package cn.it.shop.service.impl;
 
-import cn.it.shop.model.Category;
 import cn.it.shop.service.BaseService;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -8,7 +7,6 @@ import org.hibernate.SessionFactory;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.util.Date;
 import java.util.List;
 
 /**

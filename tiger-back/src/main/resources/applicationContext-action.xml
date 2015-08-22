@@ -9,5 +9,8 @@
     <bean id="categoryAction" class="cn.it.shop.action.CategoryAction">
         <property name="categoryService" ref="categoryService"/>
     </bean>
+    <bean id="accountAction" class="cn.it.shop.action.AccountAction">
+        <property name="accountService" ref="accountService"/>
+    </bean>
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 </beans>

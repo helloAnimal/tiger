@@ -9,4 +9,5 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     <bean id="categoryService" class="cn.it.shop.service.impl.CategoryServiceImpl" parent="baseService"/>
+    <bean id="accountService" class="cn.it.shop.service.impl.AccountServiceImpl" parent="baseService"/>
 </beans>

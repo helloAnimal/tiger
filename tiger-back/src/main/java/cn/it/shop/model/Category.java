@@ -1,16 +1,25 @@
 package cn.it.shop.model;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * 描述：
  * User:
- * Date: 2015/8/16
- * Time: 18:15
+ * Date: 2015/8/22
+ * Time: 14:28
  */
+@Entity
 public class Category {
     private int id;
     private String type;
     private Byte hot;
+    private Integer aid;
 
+    @Id
+    @Column(name = "id", nullable = false, insertable = true, updatable = true)
     public int getId() {
         return id;
     }
@@ -19,6 +28,8 @@ public class Category {
         this.id = id;
     }
 
+    @Basic
+    @Column(name = "type", nullable = true, insertable = true, updatable = true, length = 20)
     public String getType() {
         return type;
     }
@@ -27,12 +38,24 @@ public class Category {
         this.type = type;
     }
 
+    @Basic
+    @Column(name = "hot", nullable = true, insertable = true, updatable = true)
     public Byte getHot() {
         return hot;
     }
 
     public void setHot(Byte hot) {
         this.hot = hot;
+    }
+
+    @Basic
+    @Column(name = "aid", nullable = true, insertable = true, updatable = true)
+    public Integer getAid() {
+        return aid;
+    }
+
+    public void setAid(Integer aid) {
+        this.aid = aid;
     }
 
     @Override
@@ -43,6 +66,7 @@ public class Category {
         Category category = (Category) o;
 
         if (id != category.id) return false;
+        if (aid != null ? !aid.equals(category.aid) : category.aid != null) return false;
         if (hot != null ? !hot.equals(category.hot) : category.hot != null) return false;
         if (type != null ? !type.equals(category.type) : category.type != null) return false;
 
@@ -54,6 +78,7 @@ public class Category {
         int result = id;
         result = 31 * result + (type != null ? type.hashCode() : 0);
         result = 31 * result + (hot != null ? hot.hashCode() : 0);
+        result = 31 * result + (aid != null ? aid.hashCode() : 0);
         return result;
     }
 }

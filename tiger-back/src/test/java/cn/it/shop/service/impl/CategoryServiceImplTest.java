@@ -23,7 +23,7 @@ public class CategoryServiceImplTest {
     private CategoryService categoryService;
     @Test
     public void testQueryJoinAccount() throws Exception {
-        List<Category> list=categoryService.queryJoinAccount("");
+        List<Category> list=categoryService.queryJoinAccount("",1,2);
         for(Category tmp:list){
             System.out.println(tmp);
             System.out.println(tmp.getAccount());

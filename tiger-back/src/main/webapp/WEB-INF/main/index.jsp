@@ -23,7 +23,7 @@
             padding: 5px;
             color: #000000;
             text-decoration: none;
-            background-color: #FFFFCC;
+            background-color: #FFFFFF;
             display: block;
             text-align: center;
         }
@@ -39,7 +39,7 @@
     <div id="aa" class="easyui-accordion" style="width:200px;" data-options="fit:true">
         <div title="系统管理" data-options="selected:true">
             <ul id="menu">
-                <li><a href="javascript:void(0);" title="send_main_right.action">类别管理</a></li>
+                <li><a href="javascript:void(0);" title="send_category_query.action">类别管理</a></li>
                 <li><a href="javascript:void(0);" title="send_main_left.action">账户管理</a></li>
             </ul>
         </div>

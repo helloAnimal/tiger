@@ -47,7 +47,7 @@ public class Category {
     }
 
     @Basic
-    @Column(name = "aid",insertable = false,updatable = false)
+    @Column(name = "aid", insertable = false, updatable = false)
     public Integer getAid() {
         return aid;
     }
@@ -57,7 +57,9 @@ public class Category {
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "aid",referencedColumnName = "id")
+    @JoinColumns({
+            @JoinColumn(name = "aid", referencedColumnName = "id")
+    })
     public Account getAccount() {
         return account;
     }

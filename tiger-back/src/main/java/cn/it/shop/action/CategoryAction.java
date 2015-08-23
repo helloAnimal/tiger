@@ -33,6 +33,11 @@ public class CategoryAction extends ActionSupport{
         return SUCCESS;
     }
 
+//    public String query(){
+//        categoryService.queryJoinAccount(category.getType());
+//        return "send";
+//    }
+
     public void setCategory(Category category) {
         this.category = category;
     }

@@ -11,5 +11,5 @@ import java.util.List;
  * Time: 19:59
  */
 public interface CategoryService extends BaseService<Category>{
-    public List<Category> queryJoinAccount(String type);
+    public List<Category> queryJoinAccount(String type,int page,int size);
 }

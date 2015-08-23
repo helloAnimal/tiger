@@ -4,7 +4,6 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
     <constant name="struts.devMode" value="true"/>
     <package name="shop" namespace="/" extends="json-default">
         <global-results>
@@ -16,6 +15,7 @@
         <action name="category_*" class="categoryAction" method="{1}">
             <result name="jsonMap" type="json">
                 <param name="root">pageMap</param>
+                <param name="excludeProperties">rows\[\d+\]\.account\.pass</param>
             </result>
         </action>
 

@@ -29,4 +29,9 @@ public class CategoryServiceImplTest {
             System.out.println(tmp.getAccount());
         }
     }
+    @Test
+    public void testGetCount() throws Exception{
+        Long _count=categoryService.getCount("男士");
+        System.out.println(_count);
+    }
 }

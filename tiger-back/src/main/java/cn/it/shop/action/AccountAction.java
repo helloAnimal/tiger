@@ -1,11 +1,9 @@
 package cn.it.shop.action;
 
 import cn.it.shop.model.Account;
-import cn.it.shop.service.impl.AccountServiceImpl;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import javax.annotation.Resource;
 
 /**
  * 描述：
@@ -15,9 +13,7 @@ import javax.annotation.Resource;
  */
 @Controller
 @Scope("prototype")
-public class AccountAction extends BaseAction{
-    @Resource
-    private AccountServiceImpl accountService;
+public class AccountAction extends BaseAction<Account>{
 
     public String save(){
         Account account=new Account();

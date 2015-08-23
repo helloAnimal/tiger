@@ -4,17 +4,20 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
-    <constant name="struts.devMode" value="true" />
-    <package name="shop" namespace="/" extends="struts-default">
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+    <package name="shop" namespace="/" extends="json-default">
         <global-results>
             <result name="mainIndex">/WEB-INF/main/mainIndex.jsp</result>
         </global-results>
         <action name="send_*_*" class="sendAction">
             <result name="send">/WEB-INF/{1}/{2}.jsp</result>
         </action>
-
-
+        <action name="category_*" class="categoryAction" method="{1}">
+            <result name="jsonMap" type="json">
+                <param name="root">pageMap</param>
+            </result>
+        </action>
 
 
         <action name="update" class="categoryAction" method="update">
@@ -31,5 +34,5 @@
         </action>
         <action name="mainIndex" class="accountAction" method="mainIndex">
         </action>
-     </package>
+    </package>
 </struts>

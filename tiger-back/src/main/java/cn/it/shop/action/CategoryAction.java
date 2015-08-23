@@ -1,12 +1,12 @@
 package cn.it.shop.action;
 
 import cn.it.shop.model.Category;
-import cn.it.shop.service.impl.CategoryServiceImpl;
-import com.opensymphony.xwork2.ActionSupport;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * 描述：
@@ -16,33 +16,42 @@ import javax.annotation.Resource;
  */
 @Controller
 @Scope("prototype")
-public class CategoryAction extends ActionSupport{
-    @Resource
-    private CategoryServiceImpl categoryService;
-    private Category category;
+public class CategoryAction extends BaseAction<Category>{
+
+    /**
+     * 分页查询
+     * @return json数据格式
+     */
+    public String queryJoinAccount() {
+        try {
+            List<Category> categoryList = categoryService.queryJoinAccount(model.getType(), page, rows);
+            pageMap=new HashMap<String, Object>();
+            pageMap.put("rows",categoryList);
+            pageMap.put("total",categoryService.getCount(model.getType()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "jsonMap";
+    }
+
+
+
+
+
 
     public String update(){
+        Category category=new Category();
         System.out.println("-------update------");
         categoryService.update(category);
         return SUCCESS;
     }
 
     public String delete(){
+        Category category=new Category();
         System.out.println("------delete-------");
         categoryService.delete(category.getId());
         return SUCCESS;
     }
 
-//    public String query(){
-//        categoryService.queryJoinAccount(category.getType());
-//        return "send";
-//    }
 
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
 }

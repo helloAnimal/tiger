@@ -54,6 +54,7 @@
         </div>
     </div>
 </div>
+<div id="win" data-options="collapsible:false,minimizable:false,maximizable:false,modal:true"></div>
 </body>
 <script type="text/javascript">
     $(function(){

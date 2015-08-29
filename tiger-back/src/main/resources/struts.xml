@@ -17,6 +17,9 @@
                 <param name="root">pageMap</param>
                 <param name="excludeProperties">rows\[\d+\]\.account\.pass</param>
             </result>
+            <result name="stream" type="stream">
+                <param name="inputName">inputStream</param>
+            </result>
         </action>
 
 

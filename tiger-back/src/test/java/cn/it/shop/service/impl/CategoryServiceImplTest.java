@@ -34,4 +34,9 @@ public class CategoryServiceImplTest {
         Long _count=categoryService.getCount("男士");
         System.out.println(_count);
     }
+    @Test
+    public void testDeleteByIds() throws Exception{
+        int i=categoryService.deleteByIds("14,15,16");
+        System.out.println(i);
+    }
 }

@@ -33,4 +33,11 @@ public class CategoryServiceImpl extends BaseServiceImpl<Category> implements Ca
         query.setParameter("type","%"+type+"%");
         return (Long)query.uniqueResult();
     }
+
+    @Override
+    public int deleteByIds(String ids) {
+        String hql="delete from Category t where t.id in ("+ids+")";
+        Query query=getSession().createQuery(hql);
+        return query.executeUpdate();
+    }
 }

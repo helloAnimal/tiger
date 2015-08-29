@@ -5,6 +5,7 @@ import cn.it.shop.service.CategoryService;
 import cn.it.shop.service.impl.AccountServiceImpl;
 import cn.it.shop.service.impl.CategoryServiceImpl;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 import org.apache.struts2.interceptor.ApplicationAware;
 import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.SessionAware;
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import javax.annotation.Resource;
+import java.io.InputStream;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Map;
@@ -24,15 +26,18 @@ import java.util.Map;
  */
 @Controller
 @Scope("prototype")
-public class BaseAction<T> extends ActionSupport implements RequestAware, SessionAware, ApplicationAware {
+public class BaseAction<T> extends ActionSupport implements RequestAware, SessionAware, ApplicationAware,ModelDriven<T> {
     protected T model;
     protected Integer page;
     protected Integer rows;
     protected Integer total;
+    protected String ids;
+    protected InputStream inputStream;
     protected Map<String, Object> pageMap;
     protected Map<String, Object> request;
     protected Map<String, Object> session;
     protected Map<String, Object> application;
+
 
     @Resource
     protected AccountService accountService;
@@ -109,5 +114,21 @@ public class BaseAction<T> extends ActionSupport implements RequestAware, Sessio
 
     public void setPageMap(Map<String, Object> pageMap) {
         this.pageMap = pageMap;
+    }
+
+    public String getIds() {
+        return ids;
+    }
+
+    public void setIds(String ids) {
+        this.ids = ids;
+    }
+
+    public InputStream getInputStream() {
+        return inputStream;
+    }
+
+    public void setInputStream(InputStream inputStream) {
+        this.inputStream = inputStream;
     }
 }
